@@ -137,7 +137,7 @@ Console.WriteLine("**** Welcome to our Bank Management System ****\n");
 
 bool isrunning = true;
 int PIN;
-login:
+
 while (isrunning)
 {
     Console.WriteLine("1. Logging to existing accountholder -----");
@@ -145,15 +145,20 @@ while (isrunning)
     Console.WriteLine("====>");
     var menuoption = Convert.ToInt32(Console.ReadLine());
 
+    int loggingattempts = 0;
+
     switch (menuoption)
     {
-        case 1:
+        
 
+        case 1:
+            
             bool inlogging = true;
 
             while (inlogging)
             {
-                int loggingattempts = 0;
+            login:
+                
 
                 Console.WriteLine("Enter your UserName:");
                 string username = Console.ReadLine().ToLower();
@@ -343,14 +348,18 @@ while (isrunning)
                 }
 
 
-                else if (userAccounts == null || loggingattempts <= 3)
+                else if (userAccounts == null && loggingattempts <= 3)
                 {
+
                     Console.WriteLine("Invalid input!! You will get max 3 times to logging.\n");
                     loggingattempts++;
+                    //goto login;
+
                 }
                 else
-                    goto login;
-
+                    break;
+                
+                
 
             }
             break;
