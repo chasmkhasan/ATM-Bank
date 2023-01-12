@@ -1,0 +1,15 @@
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\bin\Debug\net6.0\ATM-Bank-Final.exe
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\bin\Debug\net6.0\ATM-Bank-Final.deps.json
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\bin\Debug\net6.0\ATM-Bank-Final.runtimeconfig.json
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\bin\Debug\net6.0\ATM-Bank-Final.dll
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\bin\Debug\net6.0\ATM-Bank-Final.pdb
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\obj\Debug\net6.0\ATM-Bank-Final.csproj.AssemblyReference.cache
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\obj\Debug\net6.0\ATM-Bank-Final.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\obj\Debug\net6.0\ATM-Bank-Final.AssemblyInfoInputs.cache
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\obj\Debug\net6.0\ATM-Bank-Final.AssemblyInfo.cs
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\obj\Debug\net6.0\ATM-Bank-Final.csproj.CoreCompileInputs.cache
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\obj\Debug\net6.0\ATM-Bank-Final.dll
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\obj\Debug\net6.0\refint\ATM-Bank-Final.dll
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\obj\Debug\net6.0\ATM-Bank-Final.pdb
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\obj\Debug\net6.0\ATM-Bank-Final.genruntimeconfig.cache
+C:\Users\hasan\OneDrive\Skrivbord\New folder\ATM-Bank-Hasan\ATM-Bank-Final\ATM-Bank-Final\obj\Debug\net6.0\ref\ATM-Bank-Final.dll
