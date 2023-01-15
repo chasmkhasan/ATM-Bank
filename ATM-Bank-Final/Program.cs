@@ -4,6 +4,8 @@ using System.Net.NetworkInformation;
 // List<Transaction> transactions = new List<Transaction>();
 
 // Method to perform a deposit
+// below three method will keep to clear information about Deposit, Withdraw and transfer.
+
 //static void Deposit(Account account, double amount)
 //{
 //    account.balance += amount;
@@ -49,6 +51,8 @@ using System.Net.NetworkInformation;
 //        timestamp = DateTime.Now
 //    });
 //}
+
+// group list has bee made can call each user. Since each user hold different amount of bank account.
 
 var user = new List<Users>()
         {
@@ -132,7 +136,7 @@ var user = new List<Users>()
         };
 Users[] users = user.ToArray();
 
-
+// welcome note for user.
 Console.WriteLine("**** Welcome to our Bank Management System ****\n");
 
 bool isrunning = true;
@@ -140,6 +144,8 @@ int PIN;
 
 while (isrunning)
 {
+    // This part will work for existing user logging.
+
     Console.WriteLine("1. Logging to existing accountholder -----");
     Console.WriteLine("2. Exit from the program----");
     Console.WriteLine("====>");
@@ -166,6 +172,7 @@ while (isrunning)
                 int pin = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("====>");
 
+                // this function fork for call data from list.
                 var userAccounts = users.FirstOrDefault(u => u.userName == username && u.pin == pin);
 
                 //if you failed to put wrong username and pin app will continue the menu but unable to see exiting information.
@@ -182,7 +189,7 @@ while (isrunning)
                     while (mainMenu)
                     {
                         Console.WriteLine("\n1. Deposit Money -----------------------------------");
-                        Console.WriteLine("2. Transfer Money ------------------------------------");
+                        Console.WriteLine("2. Transfer between Account ------------------------------------");
                         Console.WriteLine("3. Withdraaw Money -----------------------------------");
                         Console.WriteLine("4. Transactions History ------------------------------");
                         Console.WriteLine("5. Log Out - if another accountholder wants to logging in! ----");
@@ -351,7 +358,7 @@ while (isrunning)
                 else if (userAccounts == null && loggingattempts <= 3)
                 {
 
-                    Console.WriteLine("Invalid input!! You will get max 3 times to logging.\n");
+                    Console.WriteLine("Invalid input!! Please check valid information to go foreward. You will get max 3 times to logging.\n");
                     loggingattempts++;
                     //goto login;
 
