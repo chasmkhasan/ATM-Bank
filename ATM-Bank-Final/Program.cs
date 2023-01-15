@@ -59,78 +59,78 @@ var user = new List<Users>()
         {
             new Users
             {
-                userName = "kristian",
-                pin = 4455,
-                accounts = new List<Account>
+                UserName = "kristian",
+                Pin = 4455,
+                Accounts = new List<Account>
                 {
-                    new Account{accountName = "kristian-isk",     balance = 100.59 },
-                    new Account{accountName = "kristian-savings", balance = 200.59 },
+                    new Account{AccountName = "kristian-isk",     Balance = 100.59 },
+                    new Account{AccountName = "kristian-savings", Balance = 200.59 },
                 }
             },
             new Users
             {
-                userName = "tomas",
-                pin = 1122,
-                accounts = new List<Account>
+                UserName = "tomas",
+                Pin = 1122,
+                Accounts = new List<Account>
                 {
-                    new Account{accountName = "tomas-savings", balance = 100.59 },
-                    new Account{accountName = "tomas-isk",     balance = 200.59 },
-                    new Account{accountName = "tomas-salary",  balance = 300.59 },
+                    new Account{AccountName = "tomas-savings", Balance = 100.59 },
+                    new Account{AccountName = "tomas-isk",     Balance = 200.59 },
+                    new Account{AccountName = "tomas-salary",  Balance = 300.59 },
                 }
             },
             new Users
             {
-                userName = "stefan",
-                pin = 2233,
-                accounts = new List<Account>
+                UserName = "stefan",
+                Pin = 2233,
+                Accounts = new List<Account>
                 {
-                    new Account{accountName = "stefan-savings", balance = 100.59 },
-                    new Account{accountName = "stefan-isk",     balance = 200.59 },
-                    new Account{accountName = "stefan-salary",  balance = 300.59 },
-                    new Account{accountName = "stefan-child",   balance = 400.59 },
+                    new Account{AccountName = "stefan-savings", Balance = 100.59 },
+                    new Account{AccountName = "stefan-isk",     Balance = 200.59 },
+                    new Account{AccountName = "stefan-salary",  Balance = 300.59 },
+                    new Account{AccountName = "stefan-child",   Balance = 400.59 },
 
                 }
             },
             new Users
             {
-                userName = "dimitar",
-                pin = 3344,
-                accounts = new List<Account>
+                UserName = "dimitar",
+                Pin = 3344,
+                Accounts = new List<Account>
                 {
-                    new Account{accountName = "dimitar-savings", balance = 100.59 },
-                    new Account{accountName = "dimitar-isk",     balance = 200.59 },
-                    new Account{accountName = "dimitar-salary",  balance = 300.59 },
-                    new Account{accountName = "dimitar-child",   balance = 400.59 },
-                    new Account{accountName = "dimitar-parent",  balance = 500.59 },
+                    new Account{AccountName = "dimitar-savings", Balance = 100.59 },
+                    new Account{AccountName = "dimitar-isk",     Balance = 200.59 },
+                    new Account{AccountName = "dimitar-salary",  Balance = 300.59 },
+                    new Account{AccountName = "dimitar-child",   Balance = 400.59 },
+                    new Account{AccountName = "dimitar-parent",  Balance = 500.59 },
                 }
             },
             new Users
             {
-                userName = "krille",
-                pin = 5566,
-                accounts = new List<Account>
+                UserName = "krille",
+                Pin = 5566,
+                Accounts = new List<Account>
                 {
-                    new Account{accountName = "krille-savings", balance = 100.59 },
-                    new Account{accountName = "krille-isk",     balance = 200.59 },
-                    new Account{accountName = "krille-salary",  balance = 300.59 },
-                    new Account{accountName = "krille-child",   balance = 400.59 },
-                    new Account{accountName = "krille-parent",  balance = 500.59 },
-                    new Account{accountName = "krille-family",  balance = 600.59 },
+                    new Account{AccountName = "krille-savings", Balance = 100.59 },
+                    new Account{AccountName = "krille-isk",     Balance = 200.59 },
+                    new Account{AccountName = "krille-salary",  Balance = 300.59 },
+                    new Account{AccountName = "krille-child",   Balance = 400.59 },
+                    new Account{AccountName = "krille-parent",  Balance = 500.59 },
+                    new Account{AccountName = "krille-family",  Balance = 600.59 },
                 }
             },
             new Users
             {
-                userName = "christofer",
-                pin = 6677,
-                accounts = new List<Account>
+                UserName = "christofer",
+                Pin = 6677,
+                Accounts = new List<Account>
                 {
-                    new Account{accountName = "christofer-savings", balance = 100.59 },
-                    new Account{accountName = "christofer-isk",     balance = 200.59 },
-                    new Account{accountName = "christofer-salary",  balance = 300.59 },
-                    new Account{accountName = "christofer-child",   balance = 400.59 },
-                    new Account{accountName = "christofer-parent",  balance = 500.59 },
-                    new Account{accountName = "christofer-family",  balance = 600.59 },
-                    new Account{accountName = "christofer-pension", balance = 700.59 },
+                    new Account{AccountName = "christofer-savings", Balance = 100.59 },
+                    new Account{AccountName = "christofer-isk",     Balance = 200.59 },
+                    new Account{AccountName = "christofer-salary",  Balance = 300.59 },
+                    new Account{AccountName = "christofer-child",   Balance = 400.59 },
+                    new Account{AccountName = "christofer-parent",  Balance = 500.59 },
+                    new Account{AccountName = "christofer-family",  Balance = 600.59 },
+                    new Account{AccountName = "christofer-pension", Balance = 700.59 },
                 }
             },
     // other users...
@@ -177,7 +177,7 @@ while (isrunning)
                 Console.WriteLine("====>");
 
                 // this function fork for call data from list.
-                var userAccounts = users.FirstOrDefault(u => u.userName == username && u.pin == pin);
+                var userAccounts = users.FirstOrDefault(u => u.UserName == username && u.Pin == pin);
 
                 //if you failed to put wrong username and pin app will continue the menu but unable to see exiting information.
 
@@ -185,9 +185,9 @@ while (isrunning)
                 {
                     Console.WriteLine("\nExisting Accounts and Balance information are below. Please press following option.\n");
                     // varible has been declear above, so this case we need to use foreach loop to list data.
-                    foreach (var account in userAccounts.accounts)
+                    foreach (var account in userAccounts.Accounts)
                     {
-                        Console.WriteLine($"Account: {account.accountName}, Balance: {account.balance}");
+                        Console.WriteLine($"Account: {account.AccountName}, Balance: {account.Balance}");
                     }
 
                     bool mainMenu = true;
@@ -211,34 +211,40 @@ while (isrunning)
                                     Console.WriteLine("Which account would you like to Deposit? Please write the one of the serial number.: \n");
 
                                     // for loop will print out existing account information. 
-                                    for (int i = 0; i < userAccounts.accounts.Count; i++)
+                                    for (int i = 0; i < userAccounts.Accounts.Count; i++)
+                                    { 
+                                        Console.WriteLine($"{i + 1}.{userAccounts.Accounts[i].AccountName}:- {userAccounts.Accounts[i].Balance}");
+                                    }
                                     
-                                        Console.WriteLine($"{i + 1}.{userAccounts.accounts[i].accountName}:- {userAccounts.accounts[i].balance}");
-                                        var selectedAccount = int.Parse(Console.ReadLine());
-                                    
-                                    // use for invalid number.
-                                    if (selectedAccount > userAccounts.accounts.Count)
+                                    var selectedAccount = int.Parse(Console.ReadLine());
+                                    if (selectedAccount > userAccounts.Accounts.Count)
                                     {
                                         Console.WriteLine("Invalid input. You have to write above serianl number.");
                                         break;
                                     }
 
                                     Console.WriteLine("Enter the amount you want to Deposit:");
-                                    var amount = double.Parse(Console.ReadLine());
-                                    userAccounts.accounts[selectedAccount - 1].balance += amount;
-                                        Console.WriteLine($"Successfully deposited {amount} to {userAccounts.accounts[selectedAccount - 1].accountName}");
+                                    //var amount = double.Parse(Console.ReadLine());
+                                    var amountIsConverted = int.TryParse(Console.ReadLine(), out var amountToDeposit);
+                                    if (!amountIsConverted)
+                                    {
+                                        Console.WriteLine("Wrong input");
+                                        return;
+                                    }
+                                    userAccounts.Accounts[selectedAccount - 1].Balance += amountToDeposit;
+                                    
+                                    Console.WriteLine($"Successfully deposited {amountToDeposit} to {userAccounts.Accounts[selectedAccount - 1].AccountName}");
                                         //transactions.Add(Deposit(selectedAccount, amount));
-                                        userAccounts.accounts[selectedAccount - 1].transactions.Add(new Transaction
+                                        userAccounts.Accounts[selectedAccount - 1].Transactions.Add(new Transaction
                                         {
-                                            type = "Deposit",
-                                            amount = amount,
-                                            accountName = userAccounts.accounts[selectedAccount - 1].accountName,
-                                            timestamp = DateTime.Now
+                                            Type = "Deposit",
+                                            Amount = amountToDeposit,
+                                            AccountName = userAccounts.Accounts[selectedAccount - 1].AccountName,
+                                            Timestamp = DateTime.Now
                                         });
                                     
                                 }
-                                //It was plan to put invalid information, but later couldn't do it.
-                                //Bcz existing account has been print out by for loop.
+                                
                                 else
                                 {
                                     Console.WriteLine("Invalid username or PIN.");
@@ -249,41 +255,53 @@ while (isrunning)
                                 if (userAccounts != null)
                                 {
                                     Console.WriteLine("Which account would you like to Transfer from? ");
-                                    for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
-                                    var fromAccount = int.Parse(Console.ReadLine()) - 1;
+                                    for (int i = 0; i < userAccounts.Accounts.Count; i++)
+                                    { 
+                                        Console.WriteLine($"{i + 1}. {userAccounts.Accounts[i].AccountName} :- {userAccounts.Accounts[i].Balance}");
+                                    }
 
-                                    if (fromAccount > userAccounts.accounts.Count)
+                                    var fromAccount = int.Parse(Console.ReadLine()) - 1;
+                                    if (fromAccount > userAccounts.Accounts.Count)
                                     {
                                         Console.WriteLine("Invalid input. You have to write above serianl number.");
                                         break;
                                     }
 
                                     Console.WriteLine("Which account would you like to Transfer to?");
-                                    for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
+                                    for (int i = 0; i < userAccounts.Accounts.Count; i++)
+                                    { 
+                                        Console.WriteLine($"{i + 1}. {userAccounts.Accounts[i].AccountName} :- {userAccounts.Accounts[i].Balance}");
+                                    }
+                                    
                                     var toAccount = int.Parse(Console.ReadLine()) - 1;
-
-                                    if (toAccount > userAccounts.accounts.Count)
+                                    if (toAccount > userAccounts.Accounts.Count)
                                     {
                                         Console.WriteLine("Invalid input. You have to write above serianl number.");
                                         break;
                                     }
 
                                     Console.WriteLine("Enter the amount you want to transfer:");
-                                    var amount = double.Parse(Console.ReadLine());
+                                    //var amount = double.Parse(Console.ReadLine());
 
-                                    if (userAccounts.accounts[fromAccount].balance >= amount)
+                                    var transferIsConverted = int.TryParse(Console.ReadLine(), out var transferToDeposit);
+                                    if (!transferIsConverted)
                                     {
-                                        userAccounts.accounts[fromAccount].balance -= amount;
-                                        userAccounts.accounts[toAccount].balance += amount;
-                                        Console.WriteLine($"Successfully transferred {amount} from {userAccounts.accounts[fromAccount].accountName} to {userAccounts.accounts[toAccount].accountName}");
-                                        userAccounts.accounts[fromAccount].transactions.Add(new Transaction
+                                        Console.WriteLine("Wrong input");
+                                        return;
+                                    }
+
+                                    if (userAccounts.Accounts[fromAccount].Balance >= transferToDeposit)
+                                    {
+                                        userAccounts.Accounts[fromAccount].Balance -= transferToDeposit;
+                                        userAccounts.Accounts[toAccount].Balance += transferToDeposit;
+                                        Console.WriteLine($"Successfully transferred {transferToDeposit} from {userAccounts.Accounts[fromAccount].AccountName} to {userAccounts.Accounts[toAccount].AccountName}");
+                                        
+                                        userAccounts.Accounts[fromAccount].Transactions.Add(new Transaction
                                         {
-                                            type = "Transfer",
-                                            amount = amount,
-                                            accountName = userAccounts.accounts[fromAccount].accountName,
-                                            timestamp = DateTime.Now
+                                            Type = "Transfer",
+                                            Amount = transferToDeposit,
+                                            AccountName = userAccounts.Accounts[fromAccount].AccountName,
+                                            Timestamp = DateTime.Now
                                         });
                                     }
                                     else
@@ -313,11 +331,13 @@ while (isrunning)
 
                                     Console.WriteLine("\nWhich account would you like to Withdraw?");
 
-                                    for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
+                                    for (int i = 0; i < userAccounts.Accounts.Count; i++)
+                                    { 
+                                        Console.WriteLine($"{i + 1}. {userAccounts.Accounts[i].AccountName} :- {userAccounts.Accounts[i].Balance}");
+                                    }
+                                    
                                     var selectedAccount = int.Parse(Console.ReadLine()) - 1;
-
-                                    if (selectedAccount > userAccounts.accounts.Count)
+                                    if (selectedAccount > userAccounts.Accounts.Count)
                                     {
                                         Console.WriteLine("Invalid input. You have to write above serianl number.");
                                         break;
@@ -329,18 +349,25 @@ while (isrunning)
                                     So, by subtracting 1, you are mapping the user's input to the corresponding index in the list of accounts.*/
 
                                     Console.WriteLine("Enter the amount you want to withdraw:");
-                                    var amount = double.Parse(Console.ReadLine());
+                                    //var amount = double.Parse(Console.ReadLine());
 
-                                    if (userAccounts.accounts[selectedAccount].balance >= amount)
+                                    var withdrawIsConverted = int.TryParse(Console.ReadLine(), out var withdrawToDeposit);
+                                    if (!withdrawIsConverted)
                                     {
-                                        userAccounts.accounts[selectedAccount].balance -= amount;
-                                        Console.WriteLine($"Successfully withdrew {amount} from {userAccounts.accounts[selectedAccount].accountName}");
-                                        userAccounts.accounts[selectedAccount].transactions.Add(new Transaction
+                                        Console.WriteLine("Wrong input");
+                                        return;
+                                    }
+
+                                    if (userAccounts.Accounts[selectedAccount].Balance >= withdrawToDeposit)
+                                    {
+                                        userAccounts.Accounts[selectedAccount].Balance -= withdrawToDeposit;
+                                        Console.WriteLine($"Successfully withdrew {withdrawToDeposit} from {userAccounts.Accounts[selectedAccount].AccountName}");
+                                        userAccounts.Accounts[selectedAccount].Transactions.Add(new Transaction
                                         {
-                                            type = "Withdraw",
-                                            amount = amount,
-                                            accountName = userAccounts.accounts[selectedAccount].accountName,
-                                            timestamp = DateTime.Now
+                                            Type = "Withdraw",
+                                            Amount = withdrawToDeposit,
+                                            AccountName = userAccounts.Accounts[selectedAccount].AccountName,
+                                            Timestamp = DateTime.Now
                                         });
                                     }
                                     else
@@ -358,24 +385,28 @@ while (isrunning)
                                 if (userAccounts != null)
                                 {
                                     Console.WriteLine("Which account would you like SEE the Transaction? Please select the option below:");
-                                    for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
+                                    
+                                    for (int i = 0; i < userAccounts.Accounts.Count; i++)
+                                    { 
+                                        Console.WriteLine($"{i + 1}. {userAccounts.Accounts[i].AccountName} :- {userAccounts.Accounts[i].Balance}");
+                                    }
+
                                     var selectedAccount = int.Parse(Console.ReadLine()) - 1;
 
-                                    if (selectedAccount > userAccounts.accounts.Count)
+                                    if (selectedAccount > userAccounts.Accounts.Count)
                                     {
                                         Console.WriteLine("Invalid input. You have to write above serianl number.");
                                         break;
                                     }
 
-                                    var transactions = userAccounts.accounts[selectedAccount].transactions;
+                                    var transactions = userAccounts.Accounts[selectedAccount].Transactions;
 
                                     if (transactions.Count > 0)
                                     {
                                         Console.WriteLine("Transaction history:");
                                         for (int i = 0; i < transactions.Count; i++)
                                         {
-                                            Console.WriteLine($"{i + 1}. Type: {transactions[i].type}, Amount: {transactions[i].amount}, Account: {transactions[i].accountName}, Date: {transactions[i].timestamp}");
+                                            Console.WriteLine($"{i + 1}. Type: {transactions[i].Type}, Amount: {transactions[i].Amount}, Account: {transactions[i].AccountName}, Date: {transactions[i].Timestamp}");
                                         }
                                     }
                                     else

@@ -8,12 +8,12 @@ namespace ATM_Bank_Final
 {
     public class Account
     {
-        public string accountName { get; set; }
-        public double balance { get; set; }
-        public List<Transaction> transactions { get; set; }
+        public string AccountName { get; set; }
+        public double Balance { get; set; }
+        public List<Transaction> Transactions { get; set; }
         public Account()
         {
-            transactions = new List<Transaction>();
+            Transactions = new List<Transaction>();
         }
 
     }

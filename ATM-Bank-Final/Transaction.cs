@@ -8,9 +8,9 @@ namespace ATM_Bank_Final
 {
     public class Transaction
     {
-        public string type { get; set; }
-        public double amount { get; set; }
-        public string accountName { get; set; }
-        public DateTime timestamp { get; set; }
+        public string? Type { get; set; }
+        public double Amount { get; set; }
+        public string AccountName { get; set; } = string.Empty;
+        public DateTime Timestamp { get; set; }
     }
 }

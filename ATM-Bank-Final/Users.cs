@@ -8,8 +8,8 @@ namespace ATM_Bank_Final
 {
     public class Users
     {
-        public string userName { get; set; }
-        public int pin { get; set; }
-        public List<Account> accounts { get; set; }
+        public string? UserName { get; set; }
+        public int Pin { get; set; }
+        public List<Account> Accounts { get; set; } = new List<Account>();
     }
 }
