@@ -22,6 +22,7 @@ Existing user can tranfer money their different account. And able to see account
 * switch ... 
 * for loop
 * while loop
+* foreach loop
 * array
 * list
 * classes - Accounts, Transaction, Users.
