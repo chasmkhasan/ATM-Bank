@@ -4,16 +4,16 @@ This is ATM Bank concept app. Made Md Kamrul Hasan.
 
 **ATM Bank Application** is an open-source console project where existing users can transfer money, Deposit money, withdraw money from own account, able to see transaction information.
 
-
-### Deposit Money ### 
+### Below method has been ### which are under comments. I have used directly.
+*** Deposit Money ***
 Existing user can deposit their different account. And able to see account details, time, date.
 
 
-### Withdraw Money ### 
+*** Withdraw Money ***
 Existing user can withdraw their different account. And able to see account details, time, date.
 
 
-### Transfer between Account ### 
+*** Transfer between Account ***
 Existing user can tranfer money their different account. And able to see account details, time, date.
 
 ### Used technologies ###
