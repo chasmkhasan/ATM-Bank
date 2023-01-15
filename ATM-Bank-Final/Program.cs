@@ -120,17 +120,17 @@ var user = new List<Users>()
             },
             new Users
             {
-                userName = "chritofer",
+                userName = "christofer",
                 pin = 6677,
                 accounts = new List<Account>
                 {
-                    new Account{accountName = "chritofer-savings", balance = 100.59 },
-                    new Account{accountName = "chritofer-isk",     balance = 200.59 },
-                    new Account{accountName = "chritofer-salary",  balance = 300.59 },
-                    new Account{accountName = "chritofer-child",   balance = 400.59 },
-                    new Account{accountName = "chritofer-parent",  balance = 500.59 },
-                    new Account{accountName = "chritofer-family",  balance = 600.59 },
-                    new Account{accountName = "chritofer-pension", balance = 700.59 },
+                    new Account{accountName = "christofer-savings", balance = 100.59 },
+                    new Account{accountName = "christofer-isk",     balance = 200.59 },
+                    new Account{accountName = "christofer-salary",  balance = 300.59 },
+                    new Account{accountName = "christofer-child",   balance = 400.59 },
+                    new Account{accountName = "christofer-parent",  balance = 500.59 },
+                    new Account{accountName = "christofer-family",  balance = 600.59 },
+                    new Account{accountName = "christofer-pension", balance = 700.59 },
                 }
             },
     // other users...
@@ -208,7 +208,6 @@ while (isrunning)
                             case "1":
                                 if (userAccounts != null)
                                 {
-                                //deposit:
                                     Console.WriteLine("Which account would you like to Deposit? Please write the one of the serial number.: \n");
 
                                     // for loop will print out existing account information. 
@@ -216,21 +215,17 @@ while (isrunning)
                                     
                                         Console.WriteLine($"{i + 1}.{userAccounts.accounts[i].accountName}:- {userAccounts.accounts[i].balance}");
                                         var selectedAccount = int.Parse(Console.ReadLine());
+                                    
+                                    // use for invalid number.
+                                    if (selectedAccount > userAccounts.accounts.Count)
+                                    {
+                                        Console.WriteLine("Invalid input. You have to write above serianl number.");
+                                        break;
+                                    }
 
-                                        //for (int i = 0; i < userAccounts.accounts.Count; i++)
-
-                                        //if (i != selectedAccount)
-
-                                        //{
-                                        //    Console.WriteLine("Invlid input! Please input above any serial number.\n");
-                                        //    Console.WriteLine("****************************************************");
-                                        //    goto deposit;
-                                        //}
-
-
-                                        Console.WriteLine("Enter the amount you want to Deposit:");
-                                        var amount = double.Parse(Console.ReadLine());
-                                        userAccounts.accounts[selectedAccount - 1].balance += amount;
+                                    Console.WriteLine("Enter the amount you want to Deposit:");
+                                    var amount = double.Parse(Console.ReadLine());
+                                    userAccounts.accounts[selectedAccount - 1].balance += amount;
                                         Console.WriteLine($"Successfully deposited {amount} to {userAccounts.accounts[selectedAccount - 1].accountName}");
                                         //transactions.Add(Deposit(selectedAccount, amount));
                                         userAccounts.accounts[selectedAccount - 1].transactions.Add(new Transaction
@@ -253,32 +248,27 @@ while (isrunning)
                             case "2":
                                 if (userAccounts != null)
                                 {
-                                    //transfermenu:
                                     Console.WriteLine("Which account would you like to Transfer from? ");
                                     for (int i = 0; i < userAccounts.accounts.Count; i++)
                                         Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
                                     var fromAccount = int.Parse(Console.ReadLine()) - 1;
 
-                                    //for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                    //    if (i != fromAccount)
-                                    //    {
-                                    //        Console.WriteLine("Invlid input! Please input above any serial number.\n");
-                                    //        Console.WriteLine("****************************************************");
-                                    //        goto transfermenu;
-                                    //    }
+                                    if (fromAccount > userAccounts.accounts.Count)
+                                    {
+                                        Console.WriteLine("Invalid input. You have to write above serianl number.");
+                                        break;
+                                    }
 
                                     Console.WriteLine("Which account would you like to Transfer to?");
                                     for (int i = 0; i < userAccounts.accounts.Count; i++)
                                         Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
                                     var toAccount = int.Parse(Console.ReadLine()) - 1;
 
-                                    //for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                    //    if (i != toAccount)
-                                    //    {
-                                    //        Console.WriteLine("Invlid input! Please input above any serial number.\n");
-                                    //        Console.WriteLine("****************************************************");
-                                    //        goto transfermenu;
-                                    //    }
+                                    if (toAccount > userAccounts.accounts.Count)
+                                    {
+                                        Console.WriteLine("Invalid input. You have to write above serianl number.");
+                                        break;
+                                    }
 
                                     Console.WriteLine("Enter the amount you want to transfer:");
                                     var amount = double.Parse(Console.ReadLine());
@@ -311,7 +301,6 @@ while (isrunning)
                             case "3":
                                 if (userAccounts != null)
                                 {
-                                    //withdraw:
                                     Console.WriteLine("Please confirm your pin.");
                                     PIN = Convert.ToInt32(Console.ReadLine());
 
@@ -327,14 +316,12 @@ while (isrunning)
                                     for (int i = 0; i < userAccounts.accounts.Count; i++)
                                         Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
                                     var selectedAccount = int.Parse(Console.ReadLine()) - 1;
-                                    
-                                    //for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                    //    if (i != selectedAccount)
-                                    //    {
-                                    //        Console.WriteLine("Invlid input! Please input above any serial number.\n");
-                                    //        Console.WriteLine("****************************************************");
-                                    //        goto withdraw;
-                                    //    }
+
+                                    if (selectedAccount > userAccounts.accounts.Count)
+                                    {
+                                        Console.WriteLine("Invalid input. You have to write above serianl number.");
+                                        break;
+                                    }
 
 
                                     /*-1 is substracted from the parsed number, this is done to make sure that the user's input corresponds to the index of the account in the list.
@@ -374,6 +361,13 @@ while (isrunning)
                                     for (int i = 0; i < userAccounts.accounts.Count; i++)
                                         Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
                                     var selectedAccount = int.Parse(Console.ReadLine()) - 1;
+
+                                    if (selectedAccount > userAccounts.accounts.Count)
+                                    {
+                                        Console.WriteLine("Invalid input. You have to write above serianl number.");
+                                        break;
+                                    }
+
                                     var transactions = userAccounts.accounts[selectedAccount].transactions;
 
                                     if (transactions.Count > 0)
