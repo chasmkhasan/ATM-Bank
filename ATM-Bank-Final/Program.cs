@@ -1,5 +1,6 @@
 ﻿using ATM_Bank_Final;
 using System.Net.NetworkInformation;
+using System.Security.Principal;
 
 // List<Transaction> transactions = new List<Transaction>();
 
@@ -147,12 +148,14 @@ while (isrunning)
     // This part will work for existing user logging.
 
     Console.WriteLine("1. Logging to existing accountholder -----");
-    Console.WriteLine("2. Exit from the program----");
+    Console.WriteLine("2. Exit from the program------------------");
     Console.WriteLine("====>");
     var menuoption = Convert.ToInt32(Console.ReadLine());
 
+    // logging failure.
     int loggingattempts = 0;
 
+    // menuoption switch has been run only for logging and exit.
     switch (menuoption)
     {
         
@@ -165,9 +168,10 @@ while (isrunning)
             {
             login:
                 
+                // existing correct user input.
 
                 Console.WriteLine("Enter your UserName:");
-                string username = Console.ReadLine().ToLower();
+                string username = Console.ReadLine().ToLower(); // user can put capital or small letter it will convert to lower case.
                 Console.WriteLine("Enter your PIN:");
                 int pin = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("====>");
@@ -180,6 +184,7 @@ while (isrunning)
                 if (userAccounts != null)
                 {
                     Console.WriteLine("\nExisting Accounts and Balance information are below. Please press following option.\n");
+                    // varible has been declear above, so this case we need to use foreach loop to list data.
                     foreach (var account in userAccounts.accounts)
                     {
                         Console.WriteLine($"Account: {account.accountName}, Balance: {account.balance}");
@@ -188,39 +193,57 @@ while (isrunning)
                     bool mainMenu = true;
                     while (mainMenu)
                     {
-                        Console.WriteLine("\n1. Deposit Money -----------------------------------");
+                        Console.WriteLine("\n1. Deposit Money -----------------------------------------------");
                         Console.WriteLine("2. Transfer between Account ------------------------------------");
-                        Console.WriteLine("3. Withdraaw Money -----------------------------------");
-                        Console.WriteLine("4. Transactions History ------------------------------");
-                        Console.WriteLine("5. Log Out - if another accountholder wants to logging in! ----");
+                        Console.WriteLine("3. Withdraaw Money ---------------------------------------------");
+                        Console.WriteLine("4. Transactions History ----------------------------------------");
+                        Console.WriteLine("5. Log Out - if another accountholder wants to logging in! -----");
                         Console.WriteLine("====>\n");
 
                         string choice = Console.ReadLine();
+                        
 
                         switch (choice)
                         {
                             case "1":
                                 if (userAccounts != null)
                                 {
-                                    Console.WriteLine("Which account would you like to Deposit? Please write below Account Name: \n");
+                                //deposit:
+                                    Console.WriteLine("Which account would you like to Deposit? Please write the one of the serial number.: \n");
 
+                                    // for loop will print out existing account information. 
                                     for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                        Console.WriteLine($"{i + 1}.{userAccounts.accounts[i].accountName} - {userAccounts.accounts[i].balance}");
-                                    var selectedAccount = int.Parse(Console.ReadLine());
+                                    
+                                        Console.WriteLine($"{i + 1}.{userAccounts.accounts[i].accountName}:- {userAccounts.accounts[i].balance}");
+                                        var selectedAccount = int.Parse(Console.ReadLine());
 
-                                    Console.WriteLine("Enter the amount you want to Deposit:");
-                                    var amount = double.Parse(Console.ReadLine());
-                                    userAccounts.accounts[selectedAccount - 1].balance += amount;
-                                    Console.WriteLine($"Successfully deposited {amount} to {userAccounts.accounts[selectedAccount - 1].accountName}");
-                                    //transactions.Add(Deposit(selectedAccount, amount));
-                                    userAccounts.accounts[selectedAccount - 1].transactions.Add(new Transaction
-                                    {
-                                        type = "Deposit",
-                                        amount = amount,
-                                        accountName = userAccounts.accounts[selectedAccount - 1].accountName,
-                                        timestamp = DateTime.Now
-                                    });
+                                        //for (int i = 0; i < userAccounts.accounts.Count; i++)
+
+                                        //if (i != selectedAccount)
+
+                                        //{
+                                        //    Console.WriteLine("Invlid input! Please input above any serial number.\n");
+                                        //    Console.WriteLine("****************************************************");
+                                        //    goto deposit;
+                                        //}
+
+
+                                        Console.WriteLine("Enter the amount you want to Deposit:");
+                                        var amount = double.Parse(Console.ReadLine());
+                                        userAccounts.accounts[selectedAccount - 1].balance += amount;
+                                        Console.WriteLine($"Successfully deposited {amount} to {userAccounts.accounts[selectedAccount - 1].accountName}");
+                                        //transactions.Add(Deposit(selectedAccount, amount));
+                                        userAccounts.accounts[selectedAccount - 1].transactions.Add(new Transaction
+                                        {
+                                            type = "Deposit",
+                                            amount = amount,
+                                            accountName = userAccounts.accounts[selectedAccount - 1].accountName,
+                                            timestamp = DateTime.Now
+                                        });
+                                    
                                 }
+                                //It was plan to put invalid information, but later couldn't do it.
+                                //Bcz existing account has been print out by for loop.
                                 else
                                 {
                                     Console.WriteLine("Invalid username or PIN.");
@@ -230,15 +253,32 @@ while (isrunning)
                             case "2":
                                 if (userAccounts != null)
                                 {
+                                    //transfermenu:
                                     Console.WriteLine("Which account would you like to Transfer from? ");
                                     for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} - {userAccounts.accounts[i].balance}");
+                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
                                     var fromAccount = int.Parse(Console.ReadLine()) - 1;
+
+                                    //for (int i = 0; i < userAccounts.accounts.Count; i++)
+                                    //    if (i != fromAccount)
+                                    //    {
+                                    //        Console.WriteLine("Invlid input! Please input above any serial number.\n");
+                                    //        Console.WriteLine("****************************************************");
+                                    //        goto transfermenu;
+                                    //    }
 
                                     Console.WriteLine("Which account would you like to Transfer to?");
                                     for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} - {userAccounts.accounts[i].balance}");
+                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
                                     var toAccount = int.Parse(Console.ReadLine()) - 1;
+
+                                    //for (int i = 0; i < userAccounts.accounts.Count; i++)
+                                    //    if (i != toAccount)
+                                    //    {
+                                    //        Console.WriteLine("Invlid input! Please input above any serial number.\n");
+                                    //        Console.WriteLine("****************************************************");
+                                    //        goto transfermenu;
+                                    //    }
 
                                     Console.WriteLine("Enter the amount you want to transfer:");
                                     var amount = double.Parse(Console.ReadLine());
@@ -271,9 +311,11 @@ while (isrunning)
                             case "3":
                                 if (userAccounts != null)
                                 {
+                                    //withdraw:
                                     Console.WriteLine("Please confirm your pin.");
                                     PIN = Convert.ToInt32(Console.ReadLine());
 
+                                    // need to put pin number, which is comes from list.
                                     if (PIN != pin)
                                     {
                                         Console.WriteLine("Invaild account NAME or PINCODE");
@@ -283,8 +325,17 @@ while (isrunning)
                                     Console.WriteLine("\nWhich account would you like to Withdraw?");
 
                                     for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} - {userAccounts.accounts[i].balance}");
+                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
                                     var selectedAccount = int.Parse(Console.ReadLine()) - 1;
+                                    
+                                    //for (int i = 0; i < userAccounts.accounts.Count; i++)
+                                    //    if (i != selectedAccount)
+                                    //    {
+                                    //        Console.WriteLine("Invlid input! Please input above any serial number.\n");
+                                    //        Console.WriteLine("****************************************************");
+                                    //        goto withdraw;
+                                    //    }
+
 
                                     /*-1 is substracted from the parsed number, this is done to make sure that the user's input corresponds to the index of the account in the list.
                                     In most cases, when displaying a list of items to the user, the items are numbered starting from 1, but when working with lists in programming, the indexing usually starts at 0.
@@ -321,7 +372,7 @@ while (isrunning)
                                 {
                                     Console.WriteLine("Which account would you like SEE the Transaction? Please select the option below:");
                                     for (int i = 0; i < userAccounts.accounts.Count; i++)
-                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} - {userAccounts.accounts[i].balance}");
+                                        Console.WriteLine($"{i + 1}. {userAccounts.accounts[i].accountName} :- {userAccounts.accounts[i].balance}");
                                     var selectedAccount = int.Parse(Console.ReadLine()) - 1;
                                     var transactions = userAccounts.accounts[selectedAccount].transactions;
 
