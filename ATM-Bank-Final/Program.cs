@@ -229,7 +229,7 @@ while (isrunning)
                                     if (!amountIsConverted)
                                     {
                                         Console.WriteLine("Wrong input");
-                                        return;
+                                        break;
                                     }
                                     userAccounts.Accounts[selectedAccount - 1].Balance += amountToDeposit;
                                     
@@ -287,7 +287,7 @@ while (isrunning)
                                     if (!transferIsConverted)
                                     {
                                         Console.WriteLine("Wrong input");
-                                        return;
+                                        break;
                                     }
 
                                     if (userAccounts.Accounts[fromAccount].Balance >= transferToDeposit)
@@ -355,13 +355,14 @@ while (isrunning)
                                     if (!withdrawIsConverted)
                                     {
                                         Console.WriteLine("Wrong input");
-                                        return;
+                                        break;
                                     }
 
                                     if (userAccounts.Accounts[selectedAccount].Balance >= withdrawToDeposit)
                                     {
                                         userAccounts.Accounts[selectedAccount].Balance -= withdrawToDeposit;
                                         Console.WriteLine($"Successfully withdrew {withdrawToDeposit} from {userAccounts.Accounts[selectedAccount].AccountName}");
+                                        
                                         userAccounts.Accounts[selectedAccount].Transactions.Add(new Transaction
                                         {
                                             Type = "Withdraw",
